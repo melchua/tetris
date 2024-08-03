@@ -12,7 +12,7 @@ export const gridDefault = () => {
   // 10 zeros (0)
   for (let row = 0; row < rows; row++) {
     array.push([]);
-    for (let col = 0; col < cols; cols++) {
+    for (let col = 0; col < cols; col++) {
       array[row].push(0);
     }
   }
@@ -189,6 +189,7 @@ export const shapes = [
 
 // Random Shape
 export const randomShape = () => {
+  console.log("running randomshape");
   return random(1, shapes.length - 1);
 };
 
