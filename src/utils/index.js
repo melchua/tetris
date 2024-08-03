@@ -217,3 +217,31 @@ export const defaultState = () => {
     gameOver: false,
   };
 };
+
+export const canMoveTo = (shape, grid, x, y, rotation) => {
+  const currentShape = shapes[shape][rotation];
+  for (let row = 0; row < currentShape.length; row++) {
+    for (let col = 0; col < currentShape[row].length; col++) {
+      const proposedX = col + x;
+      const proposedY = row + y;
+      if (proposedY < 0) {
+        continue;
+      }
+      // Get the row on the grid
+      const possibleRow = grid[proposedY];
+      // check if row exists
+      if (possibleRow) {
+        // Check if this column in the row is undefined, if it's off the edges, 0, and empty
+        if (
+          possibleRow[proposedX] === undefined ||
+          possibleRow[proposedX] !== 0
+        ) {
+          return false;
+        } else {
+          return false;
+        }
+      }
+    }
+  }
+  return true;
+};
